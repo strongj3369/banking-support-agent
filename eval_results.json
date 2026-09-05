@@ -1,0 +1,486 @@
+{
+  "n": 43,
+  "correct": 42,
+  "routing_accuracy": 0.977,
+  "fallbacks_triggered": 0,
+  "elapsed_seconds": 31.1,
+  "per_class": {
+    "Positive Feedback": {
+      "support": 13,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "Negative Feedback": {
+      "support": 14,
+      "precision": 1.0,
+      "recall": 0.929,
+      "f1": 0.963
+    },
+    "Query": {
+      "support": 16,
+      "precision": 0.941,
+      "recall": 1.0,
+      "f1": 0.97
+    }
+  },
+  "confusion_matrix": {
+    "Positive Feedback": {
+      "Positive Feedback": 13
+    },
+    "Negative Feedback": {
+      "Negative Feedback": 13,
+      "Query": 1
+    },
+    "Query": {
+      "Query": 16
+    }
+  },
+  "by_case_type": {
+    "angry query": {
+      "n": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "bare ticket number": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "clear": {
+      "n": 21,
+      "correct": 21,
+      "accuracy": 1.0
+    },
+    "complaint opens with thanks": {
+      "n": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    },
+    "complaint phrased politely": {
+      "n": 3,
+      "correct": 2,
+      "accuracy": 0.667
+    },
+    "general info": {
+      "n": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "praise mentions past problem": {
+      "n": 4,
+      "correct": 4,
+      "accuracy": 1.0
+    },
+    "query without number": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "very short": {
+      "n": 4,
+      "correct": 4,
+      "accuracy": 1.0
+    }
+  },
+  "misses": [
+    {
+      "message": "Hope you can help \u2014 my new card hasn't turned up yet.",
+      "expected": "Negative Feedback",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "complaint phrased politely",
+      "correct": false,
+      "fallback_used": false
+    }
+  ],
+  "rows": [
+    {
+      "message": "Thanks for sorting out my net banking login issue.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Thank you for resolving my credit card issue so quickly.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Your branch staff in Croydon were excellent today.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Really impressed with how fast the new app is.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Appreciate the callback yesterday, it sorted everything out.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Just wanted to say the fraud team handled this brilliantly.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Five stars for whoever fixed my standing order.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "My card finally arrived, thanks for chasing it up.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "praise mentions past problem",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "The duplicate charge is gone now \u2014 appreciate you sorting it.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "praise mentions past problem",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "After all the trouble with the transfer, your team came through. Thank you.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "praise mentions past problem",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Took a while but the overdraft fee was refunded. Cheers.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "praise mentions past problem",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "My debit card replacement still hasn't arrived.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "I've been charged twice for the same transaction.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "The mobile app crashes every time I open statements.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Nobody has called me back in four days.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "My wire transfer never reached the recipient and it's been a week.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "This is the third time I've had to explain this to your staff.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "I was charged an overdraft fee despite being in credit.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "The verification code never arrives so I can't add a payee.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "I'd be grateful if someone could look into a missing payment.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "complaint phrased politely",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Hope you can help \u2014 my new card hasn't turned up yet.",
+      "expected": "Negative Feedback",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "complaint phrased politely",
+      "correct": false,
+      "fallback_used": false
+    },
+    {
+      "message": "Sorry to bother you, but the interest rate changed without any notice.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "complaint phrased politely",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Thanks in advance for looking at this: my balance is showing wrong.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "complaint opens with thanks",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Could you check the status of ticket 650932?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "What's happening with ticket 784521?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Any update on 310447?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Status of my ticket #902188 please.",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Is ticket 445019 closed yet?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Checking in on ticket 128736.",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "clear",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "I'm still waiting. What is the status of ticket 573902?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "negative",
+      "note": "angry query",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "This is ridiculous. Ticket 861254 \u2014 where are we?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "negative",
+      "note": "angry query",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Third time asking about ticket 650932. Status?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "negative",
+      "note": "angry query",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Can you tell me where my complaint has got to?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "query without number",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "What's the status of the case I opened last week?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "query without number",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "What are your branch opening hours on Saturday?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "general info",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "How long does an international transfer usually take?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "general info",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "What documents do I need to open a joint account?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "general info",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "650932",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "bare ticket number",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "#784521?",
+      "expected": "Query",
+      "actual": "Query",
+      "sentiment": "neutral",
+      "note": "bare ticket number",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "thanks!",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "very short",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "terrible service",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "very short",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Card declined again.",
+      "expected": "Negative Feedback",
+      "actual": "Negative Feedback",
+      "sentiment": "negative",
+      "note": "very short",
+      "correct": true,
+      "fallback_used": false
+    },
+    {
+      "message": "Cheers.",
+      "expected": "Positive Feedback",
+      "actual": "Positive Feedback",
+      "sentiment": "positive",
+      "note": "very short",
+      "correct": true,
+      "fallback_used": false
+    }
+  ]
+}
