@@ -15,10 +15,11 @@ from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeo
 APP_URL = "https://banking-support-agent.streamlit.app"
 
 WAKE_BUTTON = "Yes, get this app back up!"
-APP_CONTAINER = '[data-testid="stAppViewContainer"]'
+APP_CONTAINER = '[data-testid="stAppViewContainer"], [data-testid="stApp"]'
 
 LOAD_TIMEOUT_MS = 60_000
-RENDER_TIMEOUT_MS = 180_000
+DETACH_TIMEOUT_MS = 60_000
+RENDER_TIMEOUT_MS = 300_000
 HOLD_SECONDS = 15
 
 
@@ -36,6 +37,11 @@ def main() -> int:
                 wake.click()
             except PlaywrightTimeoutError:
                 pass  # already awake
+
+            try:
+                wake.wait_for(state="detached", timeout=DETACH_TIMEOUT_MS)
+            except PlaywrightTimeoutError:
+                pass  # sleep page lingering; fall through to the render wait
 
             try:
                 page.wait_for_selector(APP_CONTAINER, timeout=RENDER_TIMEOUT_MS)
