@@ -43,8 +43,14 @@ def main() -> int:
             except PlaywrightTimeoutError:
                 pass  # sleep page lingering; fall through to the render wait
 
+            # Streamlit Cloud renders the app inside an iframe; the outer page
+            # holds only the manage-app button. A main-frame selector search can
+            # never match the container, so scope the wait to the frame.
             try:
-                page.wait_for_selector(APP_CONTAINER, timeout=RENDER_TIMEOUT_MS)
+                frame = page.frame_locator('iframe[title="streamlitApp"]')
+                frame.locator(APP_CONTAINER).first.wait_for(
+                    state="visible", timeout=RENDER_TIMEOUT_MS
+                )
             except PlaywrightTimeoutError:
                 page.screenshot(path="failure.png", full_page=True)
                 print(
